@@ -1,0 +1,1 @@
+ package banking;public class AccountInformation{        public static final String [] ACCOUNT_NAMES =         { "Checking", "Savings", "Money Market" };                 public static final String [] ACCOUNT_ABBREVIATIONS =        { "CHKG", "SVGS", "MMKT" };}    
