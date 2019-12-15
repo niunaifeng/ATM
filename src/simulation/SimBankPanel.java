@@ -11,9 +11,9 @@ public class SimBankPanel extends Panel{
 	{
 		bankHandler = new BankHandler();
 		setLayout(new BorderLayout(5, 5));
-        setBackground(new Color(128,128,255));
+        setBackground(new Color(171,241,248));
         final Label title = new Label("Bank", Label.CENTER);
-        add(title,BorderLayout.NORTH);
+        add(title,BorderLayout.WEST);
         Panel BankHandler = new Panel();
         Button confirm = new Button("Confirm");
         Button terminate = new Button("Terminate");
