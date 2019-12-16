@@ -12,11 +12,11 @@ public class SimBankPanel extends Panel{
 		bankHandler = new BankHandler();
 		setLayout(new BorderLayout(5, 5));
         setBackground(new Color(171,241,248));
-        final Label title = new Label("Bank", Label.CENTER);
+        title = new Label("Bank", Label.CENTER);
         add(title,BorderLayout.WEST);
-        Panel BankHandler = new Panel();
-        Button confirm = new Button("Confirm");
-        Button terminate = new Button("Terminate");
+        buttonPanel = new Panel();
+        confirm = new Button("Confirm");
+        terminate = new Button("Terminate");
         confirm.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e)
         	{
@@ -31,9 +31,9 @@ public class SimBankPanel extends Panel{
         		terminate();
         	}
         });
-        BankHandler.add(confirm, BorderLayout.WEST);
-        BankHandler.add(terminate, BorderLayout.EAST);
-        add(BankHandler, BorderLayout.CENTER);
+        buttonPanel.add(confirm, BorderLayout.WEST);
+        buttonPanel.add(terminate, BorderLayout.EAST);
+        add(buttonPanel, BorderLayout.CENTER);
 	}
 	synchronized public boolean handle() 
 	{
@@ -57,7 +57,34 @@ public class SimBankPanel extends Panel{
 		notify();
 	}
 	
-	private BankHandler bankHandler;
+	public void changeNightMode()
+	{
+		this.setBackground(Color.black);
+		title.setBackground(Color.black);
+		title.setForeground(Color.white);
+		confirm.setBackground(Color.black);
+		confirm.setForeground(Color.white);
+		terminate.setBackground(Color.black);
+		terminate.setForeground(Color.white);
+		buttonPanel.setBackground(Color.black);
+	}
 	
+	public void changeDayMode()
+	{
+		this.setBackground(new Color(171,241,248));
+		title.setBackground(new Color(171,241,248));
+		title.setForeground(Color.black);
+		confirm.setBackground(Color.white);
+		confirm.setForeground(Color.black);
+		terminate.setBackground(Color.white);
+		terminate.setForeground(Color.black);
+		buttonPanel.setBackground(new Color(171,241,248));
+	}
+	
+	private BankHandler bankHandler;
+	private Label title;
+	private Button confirm;
+	private Button terminate;
+	private Panel buttonPanel;
 	
 }
